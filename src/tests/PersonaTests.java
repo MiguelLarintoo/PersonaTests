@@ -14,7 +14,22 @@ class PersonaTests {
 		 Persona persona = new Persona();
 		 assertEquals("", persona.toString().contains("Nombre:"));
 	     assertTrue(persona.toString().contains("Edad: 0"));
-	  }
+	 }
+	 @Test
+	    void testConstructorConParametrosBasicos() {
+	        Persona persona = new Persona("Juan", 25, 'H');
+	        assertTrue(persona.toString().contains("Nombre: Juan"));
+	        assertTrue(persona.toString().contains("Edad: 25"));
+	        assertTrue(persona.toString().contains("Sexo: hombre"));
+	    }
+
+	    @Test
+	    void testConstructorConTodosLosParametros() {
+	        Persona persona = new Persona("Ana", 30, 'M', 60.5, 1.65);
+	        assertTrue(persona.toString().contains("Nombre: Ana"));
+	        assertTrue(persona.toString().contains("Edad: 30"));
+	        assertTrue(persona.toString().contains("Sexo: mujer"));
+	    }
 	@Test
 	void testPersonaStringIntChar() {
 	}
