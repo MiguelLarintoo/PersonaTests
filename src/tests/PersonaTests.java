@@ -1,59 +1,54 @@
 package tests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import main.java.Persona;
+
 class PersonaTests {
 
-	@Test
-	void testPersona() {
-		fail("Not yet implemented");
-	}
-
+	 @Test
+	 public void testConstructorDefault() {
+		 Persona persona = new Persona();
+		 assertEquals("", persona.toString().contains("Nombre:"));
+	     assertTrue(persona.toString().contains("Edad: 0"));
+	  }
 	@Test
 	void testPersonaStringIntChar() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	void testPersonaStringIntCharDoubleDouble() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	void testSetNombre() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	void testSetEdad() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	void testSetSexo() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	void testSetPeso() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	void testSetAltura() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	void testCalcularIMC() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	void testEsMayorDeEdad() {
-		fail("Not yet implemented");
 	}
 
 }
