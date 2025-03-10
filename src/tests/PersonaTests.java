@@ -23,25 +23,40 @@ class PersonaTests {
 	void testPersonaStringIntCharDoubleDouble() {
 	}
 
-	@Test
-	void testSetNombre() {
-	}
+    @Test
+    void testSetNombre() {
+        Persona persona = new Persona();
+        persona.setNombre("Julia");
+        assertTrue(persona.toString().contains("Nombre: Julia"));
+    }
 
-	@Test
-	void testSetEdad() {
-	}
+    @Test
+    void testSetEdad() {
+        Persona persona = new Persona();
+        persona.setEdad(18);
+        assertTrue(persona.toString().contains("Edad: 18"));
+    }
 
-	@Test
-	void testSetSexo() {
-	}
+    @Test
+    void testSetSexo() {
+        Persona persona = new Persona();
+        persona.setSexo('M');
+        assertTrue(persona.toString().contains("Sexo: mujer"));
+    }
 
-	@Test
-	void testSetPeso() {
-	}
+    @Test
+    void testSetPeso() {
+        Persona persona = new Persona();
+        persona.setPeso(65);
+        assertTrue(persona.toString().contains("Peso: 65.0 kg"));
+    }
 
-	@Test
-	void testSetAltura() {
-	}
+    @Test
+    void testSetAltura() {
+        Persona persona = new Persona();
+        persona.setAltura(1.80);
+        assertTrue(persona.toString().contains("Altura: 1.8 metros"));
+    }
 
 	@Test
 	void testCalcularIMC() {
