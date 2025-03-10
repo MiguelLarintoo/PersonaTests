@@ -1,6 +1,7 @@
 package tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -77,8 +78,18 @@ class PersonaTests {
 	void testCalcularIMC() {
 	}
 
-	@Test
-	void testEsMayorDeEdad() {
-	}
+
+    @Test
+    void testEsMayorDeEdadTrue() {
+        Persona persona = new Persona("Pedro", 20, 'H');
+        assertTrue(persona.esMayorDeEdad());
+    }
+
+    @Test
+    void testEsMayorDeEdadFalse() {
+        Persona persona = new Persona("Laura", 16, 'M');
+        assertFalse(persona.esMayorDeEdad());
+    }
+
 
 }
