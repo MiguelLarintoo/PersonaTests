@@ -14,11 +14,11 @@ public class Persona {
 
 	private final static char SEXO_DEF = 'H';
 
-	public static final int INFRAPESO = -1;
+	public static final Integer INFRAPESO = -1;
 
-	public static final int PESO_IDEAL = 0;
+	public static final Integer PESO_IDEAL = 0;
 
-	public static final int SOBREPESO = 1;
+	public static final Integer SOBREPESO = 1;
 
 	// Atributos
 
@@ -27,24 +27,24 @@ public class Persona {
 	private int edad;
 	private String DNI;
 	private char sexo;
-	private double peso;
-	private double altura;
+	private Double peso;
+	private Double altura;
 
 	// Contructores
 
 	public Persona() {
 
-		this("", 0, SEXO_DEF, 0, 0);
+		this("", 0, SEXO_DEF, 0.00, 0.00);
 
 	}
 
 	public Persona(String nombre, int edad, char sexo) {
 
-		this(nombre, edad, sexo, 0, 0);
+		this(nombre, edad, sexo, 0.00, 0.00);
 
 	}
 
-	public Persona(String nombre, int edad, char sexo, double peso, double altura) {
+	public Persona(String nombre, int edad, char sexo, Double peso, Double altura) {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.peso = peso;

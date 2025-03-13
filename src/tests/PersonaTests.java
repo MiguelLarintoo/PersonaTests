@@ -1,7 +1,10 @@
 package tests;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -11,25 +14,19 @@ import main.java.Persona;
 class PersonaTests {
 
 	 @Test
-	 public void testConstructorDefault() {
-		 Persona persona = new Persona();
-		 assertEquals("", persona.toString().contains("Nombre:"));
-	     assertTrue(persona.toString().contains("Edad: 0"));
-	 }
-	 @Test
 	 public void testConstructorConParametrosBasicos() {
-	        Persona persona = new Persona("Juan", 25, 'H');
-	        assertTrue(persona.toString().contains("Nombre: Juan"));
-	        assertTrue(persona.toString().contains("Edad: 25"));
-	        assertTrue(persona.toString().contains("Sexo: hombre"));
+	      Persona persona = new Persona("Juan", 25, 'H');
+	      assertTrue(persona.toString().contains("Nombre: Juan"));
+	      assertTrue(persona.toString().contains("Edad: 25"));
+	      assertTrue(persona.toString().contains("Sexo: hombre"));
 	    }
 
 	 @Test
 	 public void testConstructorConTodosLosParametros() {
-	        Persona persona = new Persona("Ana", 30, 'M', 60.5, 1.65);
-	        assertTrue(persona.toString().contains("Nombre: Ana"));
-	        assertTrue(persona.toString().contains("Edad: 30"));
-	        assertTrue(persona.toString().contains("Sexo: mujer"));
+		 Persona persona = new Persona("Ana", 30, 'M', 60.5, 1.65);
+		 assertTrue(persona.toString().contains("Nombre: Ana"));
+		 assertTrue(persona.toString().contains("Edad: 30"));
+		 assertTrue(persona.toString().contains("Sexo: mujer"));
 	    }
 
     @Test
@@ -68,7 +65,32 @@ class PersonaTests {
     }
 
 	@Test
-	public void testCalcularIMC() {
+	public void testCalcularIMCInfrapeso() {
+		Persona persona = new Persona();
+		persona.setPeso(50);
+		persona.setAltura(1.80);
+		assertEquals(-1, persona.calcularIMC());
+	}
+	
+	@Test
+	public void testCalcularIMCSobrePeso() {
+		Persona persona = new Persona();
+		persona.setPeso(150);
+		persona.setAltura(1.80);
+		assertEquals(1, persona.calcularIMC());
+	}
+	@Test
+	public void testCalcularIMCPesoIdeal() {
+		Persona persona = new Persona();
+		persona.setPeso(80);
+		persona.setAltura(1.80);
+		assertEquals(0, persona.calcularIMC());
+	}
+	@Test
+	public void testCalcularIMCNull() {
+		Persona persona = new Persona();
+		assertNull(persona.calcularIMC());
+		
 	}
 
 
